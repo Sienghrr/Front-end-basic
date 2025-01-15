@@ -1,0 +1,199 @@
+<!-- Margin Property
+
+ margin-left: 5px;
+ margin-right: 5px;
+ margin-top: 5px;
+ margin-bottom: 5px;
+
+ margin: 5px; /* left, right, top, bottom */
+
+ margin: 5px 10px;
+  
+    5px => top, bottom
+     10px => left, right
+
+ margin: 5px 10px 15px;
+
+    5px => top
+    10px => left, right
+    15px => bottom
+
+ margin: 5px 10px 15px 20px;
+
+    5px => top, 10px => right, 15px => bottom, 20px => left -->
+
+    <!-- Padding Property
+
+ padding-left: 5px;
+ padding-right: 5px;
+ padding-top: 5px;
+ padding-bottom: 5px;
+
+ padding: 5px; /* left, right, top, bottom */
+
+ padding: 5px 10px;
+  
+    5px => top, bottom
+     10px => left, right
+
+ padding: 5px 10px 15px;
+
+    5px => top
+    10px => left, right
+    15px => bottom
+
+ padding: 5px 10px 15px 20px;
+
+    5px => top, 10px => right, 15px => bottom, 20px => left -->
+
+    <!-- Text Property
+
+ text-align: center | right | left | justify;
+
+ text-indent: 30px;
+
+ text-decoration: underline | none | overline | line-through;
+
+ text-decoration-color: yellow;
+
+ text-decoration-style: solid | dashed | double | .......;
+
+ text-transform: lowercase | uppercase | capitalize | normal;
+
+ text-shadow: x y blurry shadow_color; 
+
+ color: green;
+
+ font-family: Verdana, Arial, 'time new roman';
+
+ font-size: 14px;
+ 
+ font-weight: bold;
+ 
+ font-style: italic;
+
+ letter-spacing: 1px;
+
+ word-spacing: 5px;
+
+ line-height: 21px;
+
+ font: bold 14px/21px Verdana, Arial, 'time new roman';
+
+ white-space: nowrap | wrap; -->
+ <!-- Border Property
+
+ border-left-width: 5px;
+
+ border-left-color: green;
+
+ border-letf-style: solid | dashed | dotted | double | groove;
+
+ border-left: 5px solid green;
+
+ ---------
+
+ border-right-width: 5px;
+
+ border-right-color: green;
+
+ border-right-style: solid | dashed | dotted | double | groove;
+
+ border-right: 5px solid green;
+
+ ---------
+
+ border-top-width: 5px;
+
+ border-top-color: green;
+
+ border-top-style: solid | dashed | dotted | double | groove;
+
+ border-top: 5px solid green;
+
+ ---------
+
+ border-bottom-width: 5px;
+
+ border-bottom-color: green;
+
+ border-bottom-style: solid | dashed | dotted | double | groove;
+
+ border-bottom: 5px solid green;
+
+ ---------
+
+ border-width: 5px;
+
+ border-color: green;
+
+ border-style: solid | dashed | dotted | double | groove;
+
+ border: 5px solid green;
+
+ ---------
+
+ border-top-left-radius: 5px;
+ border-top-right-radius: 10px;
+ border-bottom-left-radius: 15px;
+ border-bottom-right-radius: 20px;
+
+ border-radius: 5px;
+ /*  5px => top left, top right, bottom left, bottom right */
+
+ border-radius: 5px 10px;
+ /*  5px => top left, bottom right, */
+ /*  10px => bottom left, top right */
+
+ border-radius: 5px  10px  15px;
+ /* 
+  5px => top left  
+  10px => top right | bottom left
+  15px => bottom right
+ */
+
+ border-radius: 5px  10px  15px  20px;
+ /* 
+  5px => top left  
+  10px => top right 
+  15px => bottom right
+  20px => bottom left
+ */  -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 20px;
+        }
+        #box{
+            width: 300px; background-color: orange; padding: 15px;
+            border: 8px solid darkorange; border-radius: 40px;
+            text-align: center; margin-top: 130px;
+            margin-left: auto; margin-right: auto;
+            
+            
+        }
+        #box img{
+           width: 250px; height: 250px; border-radius: 50%;
+           border: 10px solid white; margin-top: -155px;
+           outline: 8px solid darkorange;
+        }
+        #box p{
+            color: white;
+            font: 18px/24px sans-serif;
+            letter-spacing: 1px;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img src="images/cow.jpeg" alt="">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur inventore laborum nostrum dolorum molestias id, minima culpa voluptates quam unde provident labore error delectus, magnam, sequi ipsam obcaecati. Sint, deleniti.</p>
+    </div>
+</body>
+</html>
