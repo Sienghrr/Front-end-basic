@@ -1,0 +1,37 @@
+<p>structural-directive works!</p>
+<button (click)="showText()">text display</button>
+<!-- <h1 *ngIf = "isCambodia; else notCam">Welcome to cambodia</h1> -->
+ <div *ngIf = "isCambodia; then cam ; else others"></div>
+<ng-template #others>
+    <h3>others block</h3>
+</ng-template>
+<ng-template #cam>
+    <h3>Cambodia block</h3>
+</ng-template>
+<ng-template #notCam>
+    <h3>others</h3>
+</ng-template>
+
+-------------------------------
+<div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'">red color</div>
+    <div *ngSwitchCase="'blue'">blue color</div>
+    <div *ngSwitchCase="'black'" >my fav is black</div>
+    <div *ngSwitchDefault>default color</div>
+</div>
+-------------------------------
+<div *ngFor="let c of colors;">
+    <h3>{{c}}</h3>
+</div>
+<div *ngFor="let c of colors; index as i">
+    <h3>{{i}}-{{c}}</h3>
+</div>
+<div *ngFor="let c of colors; first as f">
+    <h3>{{f}}-{{c}}</h3>
+</div>
+<div *ngFor="let c of colors; last as j"> 
+    <!-- we can use even and odd also like last and first -->
+    <h3>{{j}}-{{c}}</h3>
+</div>
+
+
