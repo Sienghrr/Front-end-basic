@@ -19,14 +19,17 @@ export class StudentDetailComponent implements OnInit {
 }
   goNext() {
     let nextid = this.studentId +1;
-    this.router.navigate(['/detail',nextid]);
+//this.router.navigate(['/detail',nextid]); //absolute route
+this.router.navigate(["..",nextid],{relativeTo:this.activateRoute}); //relative route
   }
   goPrevious() {
     let previousid = this.studentId -1;
-    this.router.navigate(['/detail',previousid]);
+   // this.router.navigate(['/detail',previousid]);
+   this.router.navigate(["..",previousid],{relativeTo:this.activateRoute});
   }
   goBack(){
-    this.router.navigate(['/list',{myId:this.studentId}]);
+    //this.router.navigate(['/list',{myId:this.studentId}]);
+    this.router.navigate(["../",{myId:this.studentId}],{relativeTo:this.activateRoute});
   }
 
 
