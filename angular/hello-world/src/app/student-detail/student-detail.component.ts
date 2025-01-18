@@ -9,8 +9,13 @@ import { StudentService } from '../service/student.service';
 export class StudentDetailComponent implements OnInit {
 constructor(private _setService : StudentService){}
 students : any;
+errorMessage : any;
   ngOnInit(): void {
-    this.students = this._setService.getStudents();
+    //this.students = this._setService.getStudents();
+    this._setService.getStudentV2().subscribe(data => {this.students = data},
+      error =>{this.errorMessage = error}     
+
+    );
   }
 
 }

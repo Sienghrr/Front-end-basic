@@ -1,0 +1,8 @@
+<p>student-list </p>
+<!-- <p *ngFor="let st of students">
+    <a routerLink="/detail/{{st.id}}">{{st.name}}</a>
+</p> -->
+<p *ngFor="let st of students">
+    <button (click)="goToStudentDetail(st.id)"
+    [class.highlight]="checkHighlight(st.id)">{{st.name}}</button>
+</p>
