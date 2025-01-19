@@ -27,6 +27,9 @@ doSubmit(){
   console.log("Submit works");
   this.studentService.registerStudent(this.stu).subscribe(data=>{
     console.log(data);
+  },error=>{
+    console.log("something went wrong");
+    console.log(error);
   });
 }
 }
