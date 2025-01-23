@@ -1,38 +1,24 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { ChildComponent } from './child/child.component';
+import { MessageService } from './message.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements AfterViewInit{
-  login = true;
-  title = 'componentInteraction';
-  imagePath = '/assets/winsever1.png';
-  count = 0;
-  name = "";
-  username = "";
-  private _myname = "";
+export class AppComponent  {
+  // @ViewChild(ChildComponent) myElement!: ChildComponent;
 
-  @ViewChild("usernameRef") usernameTextField !: ElementRef;
-  ngAfterViewInit(): void {
-    //this.usernameTextField.nativeElement.focus(); 
+  // ngAfterViewInit(): void {
+  //  this.myElement.name = 'sweetheart';
+  // }
+  greeting() {
+   this.mss.sendMessage('Hello child');
   }
-
-  set myname(value: string){
-    this._myname = value;
-    if(value === "sieng"){
-      alert("You are the owner of your own self");
-    }
+  constructor(private mss:MessageService){}
+  askForLocation(){
+    this.mss.sendMessage('location?');
   }
-  get myname(){return this._myname;}
-  doCount(){
-    this.count++;
-  }
-  checkName(value: string){
-    this.username = value;
-    if(this.username==="sieng"){
-      alert("You are the owner of your own self");
-    }
-  }
+  
 }
