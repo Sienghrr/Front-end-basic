@@ -1,0 +1,28 @@
+<!-- class to template -->
+{{title}} <!--interpolation-->
+<img [src]="imagePath" alt="image not found" /> <!--property binding-->
+
+
+<!-- template to class -->
+<button (click)="doCount()">Count</button>
+<p>Count click :{{count}}</p> <!--event binding by click on btn-->
+
+
+<!-- class <-> template -->
+<input type="text" [(ngModel)]="name" >
+<p>Name:{{name}}</p> <!--two way binding-->
+
+<!-- <input type="text" [ngModel]="username" (ngModelChange)="username=$event" > -->
+<input #usernameRef type="text" [ngModel]="username" (ngModelChange)="checkName($event)" >
+<p>Username:{{username}}</p> <!--two way binding split(can add customize logic)-->
+
+<!-- getter and setter  -->
+<input type="text" [(ngModel)]="myname" >
+<p>Myname:{{myname}}</p> <!--two way binding-->
+
+
+-----------------------------------------------------------
+<h2>Parent Component</h2>
+<button (click)="login=true">log in</button>
+<button (click)="login=false">log out</button>
+<app-home [isLogin]="login"></app-home>
