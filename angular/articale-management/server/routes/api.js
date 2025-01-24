@@ -80,7 +80,7 @@ router.get('/articles', (req, res) =>{
     res.json(articles)
 })
 
-router.get('/paid_articles', (req, res) =>{
+router.get('/paid_articles', verifyToken,(req, res) =>{
     let articles = [
         {
             "id":5,
@@ -109,6 +109,29 @@ router.get('/paid_articles', (req, res) =>{
     ]
     res.json(articles)
 })
+
+function verifyToken(req, res ,next) {
+    //check authorization
+    let authorization = req.headers.authorization
+    if(!authorization){
+        return res.status(401).send('No authorization header provided')
+    }
+    // check token
+    let token = authorization.split(' ')[1]
+    if(token === undefined ){
+        return res.status(401).send('No token provided')
+    }
+
+    // verify token
+    let payload = jwt.verify(token,'secretkey',)
+    if(!payload){
+        return res.status(401).send('Invalid token')
+    }
+     
+    req.userId = payload.subject;
+    next();
+ 
+}
 
 
 module.exports = router;

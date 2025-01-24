@@ -16,7 +16,14 @@ export class AuthService {
     return this.http.post(this.baseUrl + "login",user)
   }
   hasToken():boolean{
-    return !!localStorage.getItem('token');
+    return !!this.getToken();
   }
+  getToken(){
+    return localStorage.getItem('token');
+  }
+  logOut(){
+    localStorage.removeItem('token');
+ 
+}
 }
 
